@@ -29,11 +29,17 @@
 
      - Change the PORT_NUMBER variable (around line 112) to be "50011" or another free port on your system.  
 
-6. After the file is saved, return to your SSH session, cd to the newly-created "3-minute-watsoning" directory, and run the following command: 
+6. After the file is saved, return to your SSH session, cd to the newly-created "3-minute-watsoning" directory, and run the following command to install the necessary Python packages:
 
-    ```python3 ./server.py```
+    ```
+    pip3 install -r requirements.txt```
+    
+7. From the SSH session, run the following command to start the web server: 
 
-6. Open a browser, pointed at the URL http://<your_system_name>:50011 (or whatever port you chose in step 4)
+    ```
+    python3 ./server.py```
+
+8. Open a browser, pointed at the URL http://<your_system_name>:50011 (or whatever port you chose in step 4)
 
      
   
