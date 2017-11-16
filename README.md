@@ -1,12 +1,49 @@
-# Personality Insights Python Starter Application
-
+# 3-minute Watsoning Demo for IBM i
+  This application is a fork of an existing project on Watson Developer Cloud. It has been showcased as part of a "3 minute demo" to demonstrate how quickly one can deploy a cognitive application to IBM i.
+  
   The IBM Watson [Personality Insights][service_url] service uses linguistic analysis to extract cognitive and social characteristics from input text such as email, text messages, tweets, forum posts, and more. By deriving cognitive and social preferences, the service helps users to understand, connect to, and communicate with other people on a more personalized level.
+  
+# Deploying this application to IBM i
+
+1. Ensure that you have Python 3 installed on your IBM i by running the "python3 --version" command. 
+  
+    If you do not have it installed, please consult [the 5733-OPS developerWorks page](https://www.ibm.com/developerworks/community/wikis/home/wiki/IBM%20i%20Technology%20Updates/page/Open%20Source%20Technologies?lang=en) or the [5733-OPS Installation Guide](http://club.alanseiden.com/learninghall/article/5733-ops-installation-guide/) at the Club Seiden "Learning Hall" blog. 
+    
+2. Create an IBM Cloud (formerly Bluemix) Account
+
+    [Sign up][sign_up] in Bluemix, or use an existing account. Watson Services in Beta are free to use.
+  
+3. Get credentials for the Personality Insights API
+
+4. Clone this repository to IBM i, by running this command in an ssh session (after creating and cd'ing to your directory). This will clone the project into a subdirectory named "3-minute-watsoning". Keep your SSH session open. 
+
+    ```git clone https://github.com/ThePrez/3-minute-watsoning/```
+    
+5. Edit the file "server.py" in the following ways:
+     - Edit the file’s “Local variables” section (around line 35) with the following values (substituting your credential information from step 3): 
+          ```
+          
+               self.url = "<your_URL_from_step3>"
+               self.username = "<your_username_from_step3>"
+               self.password = "<your_password_from_step3>"```
+
+     - Change the PORT_NUMBER variable (around line 112) to be "50011" or another free port on your system.  
+
+6. After the file is saved, return to your SSH session, cd to the newly-created "3-minute-watsoning" directory, and run the following command: 
+
+    ```python3 ./server.py```
+
+6. Open a browser, pointed at the URL http://<your_system_name>:50011 (or whatever port you chose in step 4)
+
+     
+  
+ ----
 
 Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/personality-insights-python)
 
-## Getting Started
+## Deploying this application to IBM Cloud (formerly Bluemix)
 
 1. Create a Bluemix Account
 
