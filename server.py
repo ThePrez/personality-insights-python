@@ -81,7 +81,7 @@ class DemoService(object):
             contentFile = open("public/text/en.txt", "r")
             self.defaultContent = contentFile.read()
         except Exception as e:
-            print "ERROR: couldn't read mobidick.txt: %s" % e
+            print("ERROR: couldn't read mobidick.txt: %s" % e)
         finally:
             contentFile.close()
 
