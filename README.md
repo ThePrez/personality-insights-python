@@ -15,6 +15,8 @@
   
 3. Get credentials for the Personality Insights API
 
+4. Change directory (cd) to the directory you'd like to work in, for instance:
+    ```git clone https://github.com/ThePrez/3-minute-watsoning/```
 4. Clone this repository to IBM i, by running this command in an ssh session (after creating and cd'ing to your directory). This will clone the project into a subdirectory named "3-minute-watsoning". Keep your SSH session open. 
 
     ```git clone https://github.com/ThePrez/3-minute-watsoning/```
@@ -22,22 +24,21 @@
 5. Edit the file "server.py" in the following ways:
      - Edit the file’s “Local variables” section (around line 35) with the following values (substituting your credential information from step 3): 
           ```
-          
                self.url = "<your_URL_from_step3>"
                self.username = "<your_username_from_step3>"
-               self.password = "<your_password_from_step3>"```
+               self.password = "<your_password_from_step3>"
 
      - Change the PORT_NUMBER variable (around line 112) to be "50011" or another free port on your system.  
 
 6. After the file is saved, return to your SSH session, cd to the newly-created "3-minute-watsoning" directory, and run the following command to install the necessary Python packages:
 
     ```
-    pip3 install -r requirements.txt```
+    pip3 install -r requirements.txt
     
 7. From the SSH session, run the following command to start the web server: 
 
     ```
-    python3 ./server.py```
+    python3 ./server.py
 
 8. Open a browser, pointed at the URL http://<your_system_name>:50011 (or whatever port you chose in step 4)
 
