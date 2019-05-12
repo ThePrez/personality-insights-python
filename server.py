@@ -21,6 +21,7 @@ import requests
 import json
 from mako.template import Template
 from mako.lookup import TemplateLookup
+from ibm_watson import PersonalityInsightsV3
 
 
 class PersonalityInsightsService:
@@ -55,13 +56,16 @@ class PersonalityInsightsService:
 
         if self.url is None:
             raise Exception("No Personality Insights service is bound to this app")
-        response = requests.post(self.url + "/v2/profile",
-                          auth=(self.username, self.password),
-                          headers = {"content-type": "text/plain" , "Accept": "application/json"},
-                          data=text
-                          )
+
+        personality_insights = PersonalityInsightsV3(
+            version='2018-01-11',
+            username=self.username,
+            password=self.password,
+            url=self.url
+        )
+        response = personality_insights.profile(content=text, accept="application/json", content_type="text/plain", content_language="en", accept_language="en", raw_scores=True, consumption_preferences=True)
         try:
-            return json.loads(response.text)
+            return response.get_result()
         except:
             raise Exception("Error processing the request, HTTP: %d" % response.status_code)
 
