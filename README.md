@@ -7,7 +7,6 @@
 
 1. Ensure that you have Python 3 installed on your IBM i by running the "python3 --version" command. 
   
-    If you do not have it installed, please consult [the 5733-OPS developerWorks page](https://www.ibm.com/developerworks/community/wikis/home/wiki/IBM%20i%20Technology%20Updates/page/Open%20Source%20Technologies?lang=en) or the [5733-OPS Installation Guide](http://club.alanseiden.com/learninghall/article/5733-ops-installation-guide/) at the Club Seiden "Learning Hall" blog. 
     
 2. Create an IBM Cloud (formerly Bluemix) Account
 
